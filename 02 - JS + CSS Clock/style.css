@@ -1,0 +1,78 @@
+body {
+  background: #485563;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #485563, #29323c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #485563, #29323c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  background: #ffffff50;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 10px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+  /* account for the height of the clock hands */
+  background: #00000050;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), 0 0 30px 10px #ffffff20;
+  border-radius: 50%;
+}
+
+.clock-face::before {
+  content: '';
+  z-index: 8;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #eee;
+  box-sizing: border-box;
+}
+
+.hand {
+  position: absolute;
+  height: 6px;
+  background: #fff;
+  top: 50%;
+  width: 50%;
+  right: 50%;
+  transform-origin: 100% 50%;
+  transform: rotate(90deg);
+  transition: 0.05s cubic-bezier(0.63, 2.88, 0.7, 0.77);
+  box-shadow: 10px 5px 10px #000;
+  border-bottom-left-radius: .5em;
+  border-top-left-radius: .5em;
+}
+
+.hour-hand {
+  background: #eee;
+  width: 35%;
+  height: 10px;
+  transition: all 1s;
+}
+
+.min-hand {
+  background: #fff;
+  width: 45%;
+}
+
+.second-hand {
+  background: tomato;
+}
