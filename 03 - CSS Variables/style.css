@@ -17,7 +17,6 @@ header {
   font-size: 1.6rem;
   color: #fff;
   text-align: center;
-  margin: 40px 0;
 }
 
 .hl {
@@ -30,11 +29,13 @@ header {
   justify-item: center;
   color: #fff;
   grid-row-gap: 10px;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
 }
+
 .controls input {
   outline: none;
 }
+
 .color-picker {
   display: grid;
   justify-content: center;
@@ -51,6 +52,17 @@ header {
   display: grid;
   grid-template-columns: auto 1fr;
   align-content: center;
+}
+
+.detail {
+  text-align: center;
+  color: #fff;
+}
+
+.updated-value {
+  font-weight: bold;
+  color: var(--base);
+  padding: 0 6px;
 }
 
 .output {
