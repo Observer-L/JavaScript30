@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>03 - CSS Variables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Update CSS Variables with
+      <span class='hl'>JS</span>
+    </h1>
+  </header>
+  <div class="container">
+    <div class="controls">
+
+
+      <div class="color-picker">
+        <input type="color" name="base" value="#ff6347">
+      </div>
+      <div class="range-control">
+        <div class="spacing-control">
+          <label for="spacing">Spacing:</label>
+          <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        </div>
+        <div class="blur-control">
+          <label for="blur">Blur:</label>
+          <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="output">
+      <img src="http://www.49363.com/uploads/allimg/120720/123Z52F2-0.jpg">
+    </div>
+  </div>
+  <script type="text/javascript" src="main.js">
+  </script>
+</body>
+
+</html>

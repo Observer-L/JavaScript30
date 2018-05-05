@@ -1,0 +1,65 @@
+:root {
+  --base: tomato;
+  --blur: 10px;
+  --spacing: 10px;
+}
+
+body {
+  background: #485563;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #485563, #29323c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #485563, #29323c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+header {
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.hl {
+  color: var(--base);
+}
+
+.controls {
+  display: grid;
+  justify-content: center;
+  justify-item: center;
+  color: #fff;
+  grid-row-gap: 10px;
+  margin: 50px 0;
+}
+.controls input {
+  outline: none;
+}
+.color-picker {
+  display: grid;
+  justify-content: center;
+}
+
+.range-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.range-control>div {
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: center;
+}
+
+.output {
+  margin: 50px;
+  text-align: center;
+}
+
+.output>img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
