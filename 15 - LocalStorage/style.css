@@ -31,6 +31,7 @@ ul {
 }
 
 .add-items {
+  white-space: nowrap;
   margin: 10px 0 5px 0;
 }
 
