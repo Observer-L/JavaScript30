@@ -43,11 +43,17 @@ ul {
 }
 
 .plates li {
+  position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px 0;
   font-weight: 100;
   display: flex;
+  align-items: center;
   user-select: none;
+}
+
+.plates li>label {
+  flex: 1;
 }
 
 .add-items input {
@@ -100,4 +106,13 @@ input[type="checkbox"] {
   outline: none;
   cursor: pointer;
   margin: 0;
+}
+
+.btn-delete {
+  background: tomato;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
 }

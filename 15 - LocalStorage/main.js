@@ -27,16 +27,17 @@ function populateList(plates = [], platesList) {
       ? 'checked'
       : ''} >
             <label for="item${i}">${plate.text}</label>
+            <button data-index=${i} class="btn-delete">x</button>
         </li>
       `;
   }).join('');
 }
 
 function toggleDone(e) {
-  if (!e.target.matches('input')) return;
-  const el = e.target;
-  const index = el.dataset.index;
+  if (!e.target.dataset.index) return;
+  const index = e.target.dataset.index;
   items[index].done = !items[index].done;
+  if(e.target.matches('button')) items.splice(index, 1);
   localStorage.setItem('items', JSON.stringify(items));
   populateList(items, itemsList);
 }
@@ -46,6 +47,7 @@ function toggleSelect(e) {
   localStorage.setItem('items', JSON.stringify(items));
   populateList(items, itemsList);
 }
+
 
 form.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
