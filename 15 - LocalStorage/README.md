@@ -1,7 +1,7 @@
 # DAY15 - LocalStorage
 ## 实现效果
 [Live Domo](http://htmlpreview.github.io/?https://github.com/Observer-L/JavaScript30/blob/master/15%20-%20LocalStorage/index.html)  
-我们的目的是使网页模拟菜单的效果，在页面中添加新的菜品，而且在页面刷新之后也不清空。 // 额外添加了全选功能。
+我们的目的是使网页模拟菜单的效果，在页面中添加新的菜品，而且在页面刷新之后也不清空。 // 额外添加了全选与删除功能。
 
 ## 知识点 By @soyaine
 - Event
