@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background: #000;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: 10vh 0;
+  height: 80vh;
+  font-size: 50px;
+  overflow: hidden;
+}
