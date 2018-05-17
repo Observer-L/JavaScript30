@@ -5,37 +5,55 @@
 [Live Domo](http://htmlpreview.github.io/?https://github.com/Observer-L/JavaScript30/blob/master/18%20-%20Adding%20Up%20Times%20with%20Reduce/index.html)  
 
 ## **步驟** By @guahsu
-### Step1. 建立篩選的function
-使用`replace`搭配正規表示式來將包含了`a, the, an`開頭的文字替換為空白。
+### Step1. 取得全部的時間值
+在HTML中，時間資訊放在`<li data-time>`中，  
+所以透過`querySelectorAll`來取得，  
+因為接著會使用`map`及`reduce`操作，  
+資料型態必須先轉為Array。
 ```javascript
-function strip(bandName) {
-    return bandName.replace(/^(a |the |an )/i, '').trim();
-}
+// 透過Array.from或是[...]來將querySelectorAll取回的NodeList轉Array
+const timeNodes = Array.from(document.querySelectorAll('[data-time'));
 ```
 
-### Step2. 對目標陣列進行篩選與排序
-這裡將原本的寫法與簡寫放在一起，可以發現整體簡潔不少。
+### Step2. 將取回的資料轉為秒數並加總
 ```javascript
-//原本的寫法
-const sortedBands = bands.sort(function(a, b){
-    if(strip(a) > strip(b)) {
-        return 1;
-    }else {
-        return -1;
-    }
-})
-//利用箭頭函數與三元運算式的簡寫：
-const sortedBands = bands.sort((a, b) => (strip(a) > strip(b)) ? 1 : -1);
+const seconds = timeNodes
+      // 取出每個元素中的data-time資料
+      .map(node => node.dataset.time)
+      .map(timeCode => {
+        // 用解構賦值的方式分別取出split(':')後的分與秒
+        // 再透過一個map執行parseFloat將字串轉數值
+        const [mins, secs] = timeCode.split(':').map(parseFloat);
+        // 回傳這組資料轉換後的總秒數
+        return (mins * 60) + secs;
+      })
+      // 用reduce來加總每次執行結果
+      .reduce((total, seconds) => total + seconds);
 ```
 
-### Step3. 把排序完的渲染到HTML中
-使用`map`與`join`來組成`<li>`元素放置
+### Step3. 把總秒數轉為時分秒格式
 ```javascript
-document.querySelector('#bands').innerHTML = 
-      sortedBands.map(band => `<li>${band}</li>`).join('');
+// 利用取得的總秒數來進行總共時分秒的計算
+// 使用Math.floor取整數，再利用%來操作餘數
+let secondsLeft = seconds;
+const hours = Math.floor(secondsLeft / 3600);
+secondsLeft = secondsLeft % 3600;
+const mins = Math.floor(secondsLeft / 60);
+secondsLeft = secondsLeft % 60;
 ```
->使用join('')修改連結符號為空白, 否則原先陣列的分隔符號是`,`也會一併渲染在html中。
+
+### Step4. 印出結果
+```javascript
+console.log(`${hours}:${mins}:${secondsLeft}`);
+```
 
 ## 其他
-這篇相對比較簡單一些，  
-運用到都是之前有練習過的語法:D
+這篇也算是之前學習的再次運用，  
+比較特別的是發現map中可以直接使用function！
+```javascript
+const [mins, secs] = timeCode.split(':').map(parseFloat);
+//等同於
+const [mins, secs] = timeCode.split(':').map(function(str){
+    return parseFloat(str);
+});
+```
