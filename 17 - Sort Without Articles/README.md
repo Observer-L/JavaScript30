@@ -2,7 +2,7 @@
 
 ## 实现效果
 介紹如何將陣列在排除部分文字的情況下排序。
-[Live Domo](http://htmlpreview.github.io/?https://github.com/Observer-L/JavaScript30/blob/master/18%20-%20Adding%20Up%20Times%20with%20Reduce/index.html)  
+[Live Domo](http://htmlpreview.github.io/?https://github.com/Observer-L/JavaScript30/blob/master/17%20-%20Sort%20Without%20Articles/index.html)  
 
 ## **步驟** By @guahsu
 ### Step1. 建立篩選的function
