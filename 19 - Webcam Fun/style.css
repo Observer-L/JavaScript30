@@ -1,0 +1,26 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: silver;
+}
+.player{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:200px;
+}
+.hasimg{
+    display:inline-block;
+    vertical-align: top;
+}
+.strip img{
+    width:100px;
+    margin: 10px;
+}
+.photo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
